@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+/home/fagnerpsantos/Developer/IFBA/distribuidosII/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3315261593.index
+32661636.index
+417504780.index
+1078878889.index
+3711279256.index
+805970135.index
+434668045.index

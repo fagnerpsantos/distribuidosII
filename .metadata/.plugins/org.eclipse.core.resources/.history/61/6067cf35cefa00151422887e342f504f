@@ -1,0 +1,35 @@
+package response;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+
+import javax.servlet.RequestDispatcher;
+
+import org.omg.CORBA_2_3.portable.OutputStream;
+
+import request.Request;
+
+public class FileResponse implements Response{
+
+	@Override
+	public String respond() {
+		StringBuilder contentBuilder = new StringBuilder();
+		try {
+		    BufferedReader in = new BufferedReader(new FileReader("./index.html"));
+		    String str;
+		    while ((str = in.readLine()) != null) {
+		        contentBuilder.append(str);
+		    }
+		    in.close();
+		} catch (IOException e) {
+		}
+		String content = contentBuilder.toString();
+		return content;
+	}
+
+}

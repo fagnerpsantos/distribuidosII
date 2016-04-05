@@ -1,0 +1,11 @@
+package response;
+
+public class FileResponse implements Response{
+
+	@Override
+	public String respond() {
+		
+		return "olá";
+	}
+
+}

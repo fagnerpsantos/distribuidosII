@@ -1,0 +1,12 @@
+package response;
+
+import java.io.File;
+
+public class FileResponse implements Response{
+
+	@Override
+	public String respond() {		
+		return "index.html";
+	}
+
+}

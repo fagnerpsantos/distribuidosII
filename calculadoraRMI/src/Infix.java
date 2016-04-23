@@ -167,10 +167,12 @@ public class Infix
             return null;
     }
     
+    /*
+    
     public static void main(String[] args)
     {
         Infix fix=new Infix();
         String expression="2+8-(5.3-5*4/7+5+3)";
         System.out.println(expression+"="+fix.infix(expression));
-    }
+    } */
 }

@@ -1,0 +1,52 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+
+
+
+public class ClienteCalc {
+	static int cont= 0;
+	static IOperacoesRemote opera = null;
+    public static void main(String[] args) throws IOException {
+    	Infix infix = new Infix();
+        // interface is dealed with like a class!
+        if (args.length != 2) {
+            System.err.println("\nUsage:\t java ClienteCalc <host_servidor> <objname>\n");
+            System.exit(1);
+        } // if()
+        try {
+            String objname = "//" + args[0] + ":1099/" + args[1];
+            System.out.println("Procurando por objeto " + objname);
+            opera = (IOperacoesRemote) Naming.lookup(objname);// rmiregistry must be running!
+        } // try()
+        catch (Exception e)//Seja mais especifico!
+        {
+            System.err.println("Problemas encontrados! " + e);
+            e.printStackTrace();
+            System.exit(2);
+        } // catch()
+        try {
+        	BufferedReader in  = new BufferedReader(new InputStreamReader(System.in));
+            String n;// could use a random number...
+            
+            System.out.println("digite: ");
+            n = in.readLine();
+            
+            double resp = 0;
+           
+            String saida= "";
+           
+            
+            
+            System.out.println("Resposta: " + saida+ "\n");
+
+        } // try()
+        catch (RemoteException re) {
+            System.err.println("Problemas na chamada remota! " + re);
+            re.printStackTrace();
+            System.exit(3);
+        } // catch()
+    } // main()    
+} // ClientWalk

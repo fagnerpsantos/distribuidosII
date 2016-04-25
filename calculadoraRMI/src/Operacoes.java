@@ -34,6 +34,8 @@ public class Operacoes extends UnicastRemoteObject implements IOperacoesRemote
 		return 0;
 	}
 
+
+
 }
 
 

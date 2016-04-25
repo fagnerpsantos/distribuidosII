@@ -34,6 +34,8 @@ import java.util.StringTokenizer;
  */
 public class Infix
 {
+	private ClienteCalc cliente = new ClienteCalc();
+	
 	private String remove(String n){
 		String  tempP = "";
 		if(n.contains(")")){
@@ -155,16 +157,11 @@ public class Infix
                operand1+operator+operand2);
         double op1=Double.parseDouble(operand1);
         double op2=Double.parseDouble(operand2);
-        if(operator.equals("*"))
-            return ""+(op1*op2);
-        else if(operator.equals("/"))
-            return ""+(op1/op2);
-        else if(operator.equals("+"))
-            return ""+(op1+op2);
-        else if(operator.equals("-"))
-            return ""+(op1-op2);
-        else
-            return null;
+        double res;
+        res = ClienteCalc.distribuir(op1,operator,op2);
+        
+		return ""+res;
+        
     }
     
     /*

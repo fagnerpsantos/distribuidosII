@@ -1,5 +1,6 @@
 
 
+import java.rmi.RemoteException;
 import java.text.DecimalFormat;
 import java.util.Stack;
 import java.util.StringTokenizer;
@@ -50,7 +51,7 @@ public class Infix
 		return tempP;
 	}
 
-	private String removerParenteses(String n) {
+	private String removerParenteses(String n) throws RemoteException {
 		int j = 0;
 		String saida = "",temp = "", temp2 = "";
 		
@@ -78,7 +79,7 @@ public class Infix
 	}
 	
     @SuppressWarnings({ "rawtypes", "unchecked" })
-	public double infix(String expression)
+	public double infix(String expression) throws RemoteException
     {
     	if(expression.contains("(")){
     		expression = removerParenteses(expression);
@@ -129,7 +130,7 @@ public class Infix
     
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	public void resolve(Stack values, 
-            Stack operators)
+            Stack operators) throws RemoteException
     {
         while(operators.size()>=2)
         {
@@ -151,7 +152,7 @@ public class Infix
         }
     }
     
-    public String getResults(String operand1, String operator, String operand2)
+    public String getResults(String operand1, String operator, String operand2) throws RemoteException
     {
         System.out.println("Performing "+
                operand1+operator+operand2);

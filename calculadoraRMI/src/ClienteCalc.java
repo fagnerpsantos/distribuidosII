@@ -50,7 +50,7 @@ public class ClienteCalc {
         } // catch()
     } // main() 
     
-    public static double distribuir(double op1, String operator, double op2){
+    public static double distribuir(double op1, String operator, double op2) throws RemoteException{
     	double res = 0;
     	/*--------------------------------------- VEI Randomiza aqui
     	

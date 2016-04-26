@@ -53,7 +53,7 @@ public class ClienteCalc {
     } // main() 
     
     public static double distribuir(double op1, String operator, double op2, int idCliente) throws RemoteException{
-    	double res = 0;    	
+    	double res = 0;       	
     	switch (operator) {
 		case "+":
 			res = opera.somar(op1, op2);
@@ -73,6 +73,11 @@ public class ClienteCalc {
 		}
     	
 		return res;
+    	
+    }
+    
+    // FALTA AQUI!
+    public void verificarCliente(int idCliente){
     	
     }
     

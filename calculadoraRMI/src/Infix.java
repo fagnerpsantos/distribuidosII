@@ -2,6 +2,7 @@
 
 import java.rmi.RemoteException;
 import java.text.DecimalFormat;
+import java.util.Random;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
@@ -159,10 +160,23 @@ public class Infix
         double op1=Double.parseDouble(operand1);
         double op2=Double.parseDouble(operand2);
         double res;
-        res = ClienteCalc.distribuir(op1,operator,op2);
+        /*
+         * 			VEI, FIZ O MÉTODO AÍ
+         * 			EMBAIXO. A GENTE PRECISA
+         * 			SABER COMO INCREMENTAR O
+         * 			ID DO USUÁRIO QUANDO CRIAR O OBJETO
+         * */
+        int idCliente = randomizar();
+        res = ClienteCalc.distribuir(op1,operator,op2, idCliente); //passando o id do cliente
         
 		return ""+res;
         
+    }
+    
+    public int randomizar(){
+    	Random numero = new Random();    	
+    	int resultado = numero.nextInt(4) + 1;
+    	return resultado;	
     }
     
     /*

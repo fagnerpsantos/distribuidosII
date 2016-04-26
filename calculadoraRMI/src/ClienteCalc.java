@@ -3,12 +3,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.Random;
 
 
 
 public class ClienteCalc {
-	static int cont= 0;
+	static int cont= 0;	
 	static IOperacoesRemote opera = null;
+	int id = 0;
     public static void main(String[] args) throws IOException {
     	Infix infix = new Infix();
         // interface is dealed with like a class!
@@ -50,16 +52,8 @@ public class ClienteCalc {
         } // catch()
     } // main() 
     
-    public static double distribuir(double op1, String operator, double op2) throws RemoteException{
-    	double res = 0;
-    	/*--------------------------------------- VEI Randomiza aqui
-    	
-    	*		Esse código ta só pra um server
-    	*		creio que a diferença será que os servidores(objetos)
-    	*		vao ser um array de string
-    	*
-    	*
-    	*/
+    public static double distribuir(double op1, String operator, double op2, int idCliente) throws RemoteException{
+    	double res = 0;    	
     	switch (operator) {
 		case "+":
 			res = opera.somar(op1, op2);
@@ -81,4 +75,6 @@ public class ClienteCalc {
 		return res;
     	
     }
+    
+    
 } // ClientWalk
